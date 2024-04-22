@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_drawer/home_screen.dart';
-import 'package:flutter_drawer/menu_screen.dart';
+import 'package:flutter_drawer/screens/home_screen.dart';
+import 'package:flutter_drawer/screens/menu_screen.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class DrawerScreen extends StatefulWidget {
@@ -17,8 +17,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
   Widget build(BuildContext context) {
     return ZoomDrawer(
         controller: ZoomDrawerController(),
-        menuScreen: const MenuScreen(),
-        mainScreen: const HomeScreen(),
+        menuScreen: MenuScreen(),
+        mainScreen: HomeScreen(),
         showShadow: true,
         style: DrawerStyle.defaultStyle,
         angle: 0.0,

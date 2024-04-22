@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_drawer/drawer_screen.dart';
+import 'package:flutter_drawer/screens/drawer_screen.dart';
+import 'package:device_preview/device_preview.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(
+      DevicePreview(
+        enabled: true,
+        tools: const [
+          ...DevicePreview.defaultTools,
+        ],
+        builder: (context) => const MyApp(), // Wrap your app
+      ),
+    );
+
+// void main() {
+//   runApp(const MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,12 +24,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Zoom Drawer',
+      title: 'ITrodevology',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      home: DrawerScreen(),
+      home: const DrawerScreen(),
     );
   }
 }
